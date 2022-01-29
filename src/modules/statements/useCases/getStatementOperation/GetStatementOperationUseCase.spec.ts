@@ -29,7 +29,7 @@ describe('get statement Operation', () => {
     );
   })
 
-  it('should be able to get user statement', async () => {
+  it('should be able to get a statement operation', async () => {
     const user = await userRepository.create({
       email: 'leonardo@gmail.com',
       name: 'leonardo',
