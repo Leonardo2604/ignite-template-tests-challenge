@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import { ITransfersRepository } from "../../../transfers/repositories/ITransfersRepository";
 
 import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
 import { Statement } from "../../entities/Statement";

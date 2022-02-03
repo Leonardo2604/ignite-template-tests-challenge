@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { DecimalTransformer } from '../../../shared/infra/typeorm/transformers/DecimalTransformer';
 
 import { User } from '../../users/entities/User';
 
@@ -30,7 +31,11 @@ export class Statement {
   @Column()
   description: string;
 
-  @Column('decimal', { precision: 5, scale: 2 })
+  @Column('decimal', {
+    precision: 5,
+    scale: 2,
+    transformer: new DecimalTransformer()
+  })
   amount: number;
 
   @Column({ type: 'enum', enum: OperationType })
